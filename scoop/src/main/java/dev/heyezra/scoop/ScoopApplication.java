@@ -2,6 +2,7 @@ package dev.heyezra.scoop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import tab.Welcome;
 
 @SpringBootApplication
 public class ScoopApplication {
@@ -11,7 +12,7 @@ public class ScoopApplication {
 		// how the main application runs
 
 		var welcomeMsg = new Welcome();
-		System.out.println(welcomeMsg.getWelcomeMesage());
+		System.out.println(welcomeMsg.getWelcomeMessage());
 	}
 
 }
