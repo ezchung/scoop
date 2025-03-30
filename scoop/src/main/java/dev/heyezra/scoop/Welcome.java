@@ -5,6 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class Welcome {
     public String getWelcomeMessage() {
-        return "Welcome Dude";
+        return "Welcome Dude!!";
     }
 }
