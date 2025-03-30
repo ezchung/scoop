@@ -1,4 +1,4 @@
-package tab;
+package dev.heyezra.scoop;
 
 import org.springframework.stereotype.Component;
 
