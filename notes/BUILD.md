@@ -24,4 +24,4 @@ While running `mvn spring:run`, the process kept crashing. Upon investigation, i
 2. Updated the Java version in `pom.xml` from **24** to **17** to match the installed JDK.
 3. Re-ran the build process to ensure compatibility.
 
-Now, `mvn spring:run` should work without errors.
+Now, `./mvnw spring-boot:run` should work without errors.
