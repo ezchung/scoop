@@ -25,3 +25,7 @@ While running `mvn spring:run`, the process kept crashing. Upon investigation, i
 3. Re-ran the build process to ensure compatibility.
 
 Now, `./mvnw spring-boot:run` should work without errors.
+
+### Packaging the application
+- Instead of doing controller, model, and service folders, since we are going to need to make everything public, will choose to make packages based on feature.
+- Everything revolving around a certain feature will live together
