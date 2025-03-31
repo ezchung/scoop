@@ -11,6 +11,7 @@ import dev.heyezra.scoop.food.Restaurant;
 import dev.heyezra.scoop.food.Location;
 import java.time.LocalDateTime;
 
+
 @SpringBootApplication
 public class ScoopApplication {
 
