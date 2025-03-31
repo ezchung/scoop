@@ -1,10 +1,14 @@
 package dev.heyezra.scoop.food;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
 import java.util.List;
+import java.util.Optional;
 
 /**
  * REST controller for handling Restaurant-related HTTP requests.
@@ -40,7 +44,11 @@ public class RestaurantController{
 
     @GetMapping("/{id}")
     Restaurant findById(@PathVariable Integer id){
-        return restaurantRepo.findById(id);
+        Optional <Restaurant> restaurant = restaurantRepo.findById(id);
+        if(restaurant.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return restaurant.get();
     }
 
 

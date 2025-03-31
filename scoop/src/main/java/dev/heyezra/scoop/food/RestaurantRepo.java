@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.time.LocalDateTime;
 
 /**
@@ -25,11 +26,11 @@ public class RestaurantRepo {
         return restaurants;
     }
 
-    Restaurant findById(Integer id){
+    //Handling  case where a restaurant with the requested ID might not exist
+    Optional <Restaurant> findById(Integer id){
         return restaurants.stream()
                             .filter(run -> run.id() == id)
-                            .findFirst()
-                            .get();
+                            .findFirst();
     }
 
     /**
