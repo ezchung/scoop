@@ -69,7 +69,7 @@ public class RestaurantController{
     //put
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{id}")
-    void update(@RequestBody Restaurant restaurant, @PathVariable Integer id){
+    void update(@Valid @RequestBody Restaurant restaurant, @PathVariable Integer id){
         restaurantRepo.update(restaurant, id);
     }
 
