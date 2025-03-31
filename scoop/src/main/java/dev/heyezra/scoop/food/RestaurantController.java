@@ -2,6 +2,7 @@ package dev.heyezra.scoop.food;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 // I am a class that responds to requests and returns responses
 @RestController
-@RequestMapping("/api/restaurant")
+@RequestMapping("/api/restaurants")
 public class RestaurantController{
 
     private final RestaurantRepo restaurantRepo;
@@ -37,9 +38,9 @@ public class RestaurantController{
         return restaurantRepo.findAll();
     }
 
-    @GetMapping("/1")
-    Restaurant findById(){
-        return restaurantRepo.findById(1);
+    @GetMapping("/{id}")
+    Restaurant findById(@PathVariable Integer id){
+        return restaurantRepo.findById(id);
     }
 
 
