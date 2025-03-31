@@ -32,6 +32,10 @@ public class RestaurantRepo {
                             .filter(run -> run.id() == id)
                             .findFirst();
     }
+    
+    void create(Restaurant restaurant){
+        restaurants.add(restaurant);
+    }
 
     /**
      * Initializes the repository with sample restaurant data.
