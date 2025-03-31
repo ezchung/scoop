@@ -32,9 +32,20 @@ public class RestaurantRepo {
                             .filter(run -> run.id() == id)
                             .findFirst();
     }
-    
+
     void create(Restaurant restaurant){
         restaurants.add(restaurant);
+    }
+
+    void update(Restaurant restaurant, Integer id){
+        Optional <Restaurant> existingRestaurant = findById(id);
+        if(existingRestaurant.isPresent()){
+            restaurants.set(restaurants.indexOf(existingRestaurant.get()), restaurant);
+        }
+    }
+
+    void delete(Integer id){
+        restaurants.removeIf(restaurant -> restaurant.id().equals(id));
     }
 
     /**
