@@ -13,6 +13,7 @@ import java.util.List;
  */
 // I am a class that responds to requests and returns responses
 @RestController
+@RequestMapping("/api/restaurant")
 public class RestaurantController{
 
     private final RestaurantRepo restaurantRepo;
@@ -31,8 +32,15 @@ public class RestaurantController{
      *
      * @return A list of all Restaurant objects in the system
      */
-    @GetMapping("/api/restaurants")
+    @GetMapping("")
     List<Restaurant> findAll(){
         return restaurantRepo.findAll();
     }
+
+    @GetMapping("/1")
+    Restaurant findById(){
+        return restaurantRepo.findById(1);
+    }
+
+
 }
