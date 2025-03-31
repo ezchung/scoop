@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -51,7 +53,7 @@ public class RestaurantController{
     Restaurant findById(@PathVariable Integer id){
         Optional <Restaurant> restaurant = restaurantRepo.findById(id);
         if(restaurant.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            throw new RestaurantNotFoundException();
         }
         return restaurant.get();
     }
@@ -60,7 +62,7 @@ public class RestaurantController{
     //Telling spring that this arg will be part of req body with @ReqBody
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    void create(@RequestBody Restaurant restaurant){
+    void create(@Valid @RequestBody Restaurant restaurant){
         restaurantRepo.create(restaurant);
     }
 

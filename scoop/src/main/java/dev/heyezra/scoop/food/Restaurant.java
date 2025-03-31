@@ -2,6 +2,8 @@ package dev.heyezra.scoop.food;
 
 import java.time.LocalDateTime;
 
+import jakarta.validation.constraints.NotEmpty;
+
 /**
  * Record representing a restaurant entity.
  *
@@ -16,8 +18,15 @@ import java.time.LocalDateTime;
  */
 public record Restaurant(
     Integer id,
+    @NotEmpty
     String title,
     Location location,
     LocalDateTime openTime,
     LocalDateTime closingTime
-){}
+){
+    public Restaurant {
+        if(!closingTime.isAfter(openTime)){
+            throw new IllegalArgumentException("Closing Time must be after Open Time");
+        }
+    }
+}
