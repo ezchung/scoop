@@ -15,3 +15,12 @@ pom.xml: dependencies, things your application needs
 ### /food
 - This will have restaurants.
 - May potentially recommend food based on weather (will need api to recommend based on weather) or if you are a sports fan, recommend restaurants offering specials or sports bar finder. Look at scores and if you are near an area with team-based promotions so example if local team wins, you can go here to get discount. 
+
+### views
+- spring mvc: model view controller
+    model is the thing you are working with
+    view how will we represent this (html page, rest api)
+    controller the traffic cop. delegate and return a response. dumb
+
+### Controller
+Restaurant controller
