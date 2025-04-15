@@ -1,5 +1,8 @@
 This will be a note page of building this app from scratch
 # Getting Started
+
+# Backend
+Java Spring Boot Maven
 ## Java Spring
 - Track activites/locations through RESTful API
 - Created in spring boot
@@ -29,3 +32,6 @@ Now, `./mvnw spring-boot:run` should work without errors.
 ### Packaging the application
 - Instead of doing controller, model, and service folders, since we are going to need to make everything public, will choose to make packages based on feature.
 - Everything revolving around a certain feature will live together
+
+# Frontend
+Angular
